@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>我的个人播客 - 源的技术分享</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            text-align: center;
+        }
+        
+        header h1 {
+            color: #667eea;
+            margin-bottom: 10px;
+        }
+        
+        header p {
+            color: #666;
+        }
+        
+        .podcast-card {
+            background: white;
+            border-radius: 15px;
+            padding: 30px;
+            margin-bottom: 20px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .podcast-card h2 {
+            color: #333;
+            margin-bottom: 15px;
+            border-bottom: 3px solid #667eea;
+            padding-bottom: 10px;
+        }
+        
+        .podcast-card p {
+            color: #555;
+            margin-bottom: 15px;
+        }
+        
+        .image-gallery {
+            display: flex;
+            gap: 20px;
+            flex-wrap: wrap;
+            margin: 20px 0;
+        }
+        
+        .image-item {
+            flex: 1;
+            min-width: 250px;
+            text-align: center;
+        }
+        
+        .image-item img {
+            max-width: 100%;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .image-item figcaption {
+            margin-top: 10px;
+            color: #666;
+            font-size: 14px;
+        }
+        
+        .audio-player {
+            width: 100%;
+            margin: 20px 0;
+        }
+        
+        .episode-list {
+            list-style: none;
+        }
+        
+        .episode-list li {
+            padding: 15px;
+            border-bottom: 1px solid #eee;
+            transition: background 0.3s;
+        }
+        
+        .episode-list li:hover {
+            background: #f8f9fa;
+        }
+        
+        .episode-list a {
+            color: #667eea;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        
+        .episode-list a:hover {
+            text-decoration: underline;
+        }
+        
+        .badge {
+            display: inline-block;
+            background: #667eea;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            margin-left: 10px;
+        }
+        
+        footer {
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            text-align: center;
+            color: #666;
+        }
+        
+        .profile-section {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        
+        .profile-img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid #667eea;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🎙️ 源的技术播客</h1>
+            <p>分享编程技术 | 学习心得 | 项目经验</p>
+        </header>
+        
+        <section class="podcast-card">
+            <h2>关于我</h2>
+            <div class="profile-section">
+                <!-- 相对路径图片 -->
+                <img src="images/profile.jpg" alt="个人头像" class="profile-img">
+                <div>
+                    <p>你好！我是一名计算机专业的学生，热爱编程和技术分享。</p>
+                    <p>这个播客记录了我的学习历程和项目经验，希望能帮助到同样在路上的你。</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="podcast-card">
+            <h2>最新一期：JSP+JDBC 开发实践 <span class="badge">NEW</span></h2>
+            <p>在这一期节目中，我分享了使用 JSP 和 JDBC 技术栈开发网上书店系统的完整过程。</p>
+            <p>内容包括：数据库设计、Servlet 架构、MVC 模式实践、以及遇到的问题和解决方案。</p>
+            
+            <div class="image-gallery">
+                <figure class="image-item">
+                    <img src="images/project-screenshot.png" alt="项目截图">
+                    <figcaption>相对路径：images/project-screenshot.png</figcaption>
+                </figure>
+                <figure class="image-item">
+                    <img src="file:///E:/websy/shiyan7/images/podcast-cover.jpg" alt="播客封面">
+                    <figcaption>绝对路径：file:///E:/websy/shiyan7/images/podcast-cover.jpg</figcaption>
+                </figure>
+            </div>
+            
+            <audio class="audio-player" controls>
+                <source src="audio/episode1.mp3" type="audio/mpeg">
+                您的浏览器不支持音频播放
+            </audio>
+        </section>
+        
+        <section class="podcast-card">
+            <h2>节目列表</h2>
+            <ul class="episode-list">
+                <li>
+                    <a href="#">EP01 - 我的编程入门之路</a>
+                    <span class="badge">已发布</span>
+                </li>
+                <li>
+                    <a href="#">EP02 - JSP+JDBC 开发实践</a>
+                    <span class="badge">热门</span>
+                </li>
+                <li>
+                    <a href="#">EP03 - 如何高效学习新技术</a>
+                    <span class="badge">预告</span>
+                </li>
+            </ul>
+        </section>
+        
+        <footer>
+            <p>&copy; 2026 源的技术播客 | Powered by GitHub Pages</p>
+            <p>欢迎访问我的 <a href="https://github.com/" style="color: #667eea;">GitHub</a></p>
+        </footer>
+    </div>
+</body>
+</html>
